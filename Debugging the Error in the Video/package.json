@@ -1,0 +1,29 @@
+{
+  "name": "customerapp",
+  "version": "1.0.0",
+  "description": "simple app for customer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanSum/FullStackProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanSum/FullStackProject/issues"
+  },
+  "homepage": "https://github.com/JonathanSum/FullStackProject#readme",
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "^2.5.7",
+    "express": "*",
+    "express-params": "0.0.3",
+    "express-validator": "^4.3.0",
+    "jquery": "^3.2.1",
+    "mongodb": "^3.0.0-rc0",
+    "mongojs": "^2.4.1"
+  }
+}

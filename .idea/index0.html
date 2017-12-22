@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Teleporting Hopper to the Beach</title>
+        <style>
+        .hopper {
+            position: absolute;
+            top: 212px;
+            left: 378px;
+            z-index: 3;
+        }
+
+        </style>
+    </head>
+    <body>
+
+    <img id="beach" src="https://www.kasandbox.org/programming-images/landscapes/beach-with-palm-trees.png">
+
+    <img class = "hopper" src="https://www.kasandbox.org/programming-images/creatures/Hopper-Jumping.png" width="76px">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    var popupSound =$("<audio preload=auto  scr='https://www.kasandbox.org/programming-sounds/rpg/battle-spell.mp3'>")
+    var hopperJump = $("<img src=\"https://www.kasandbox.org/programming-images/creatures/Hopper-Jumping.png\" >")
+    var hopperRun = $("<img src=\"https://www.kasandbox.org/programming-images/creatures/Hopper-Happy.png\">")
+    var hopperSun = $("<img src= 'https://www.kasandbox.org/programming-images/creatures/Hopper-Cool.png'>" )
+    var listH=[hopperJump, hopperRun, hopperSun];
+    var teleporting = function(event) {
+        $("body")
+    var num1 = Math.round(Math.random() * (2 - 0) + 0)
+    console.log(num1);
+    $(listH[num1]).addClass("hopper")
+               .css("top", event.pageY +"px")
+               .css("left", event.pageX + "px").appendTo("body");
+    }
+
+
+        $("#beach").on("click", teleporting);
+    </script>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project: Interactive slideshow</title>
+        <style>
+        h1 {
+            position: relative;
+            left: 176px;
+        }
+        #next {
+            position: absolute;
+           left: 372px;
+           top:350px;
+        }
+        #prev {
+            position: absolute;
+           left: 20px;
+           top:350px;
+        }
+        </style>
+    </head>
+    <body>
+    <h1>My Health Food</h1>
+    <br>
+    <img id="first" src="https://www.kasandbox.org/programming-images/food/mushroom.png" width="400" alt="Mushrooms">
+    <img id="second" src="https://www.kasandbox.org/programming-images/food/dumplings.png" width="400" alt="dumping">
+    <img id ="thrid" src="https://www.kasandbox.org/programming-images/food/hamburger.png" width="400" arc="thrid">
+    <button id="next" type="button">Next ➡</button>
+        <button id="prev" type="button">Prev</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    var index=0
+    var cur=0;
+
+    $("img").hide();
+    var imgL=["first", "second", "thrid"];
+
+
+    var slideShow =function(){
+        if(cur ===3) {
+        $("#"+imgL[2]).hide()
+            cur=0;
+        }
+        if(cur !==3){
+            $("#"+imgL[cur]).fadeIn()
+        }
+        $("#"+imgL[cur-1]).hide()
+        if(cur !==3) {
+            cur++;
+        }else {
+            cur=0;
+        }
+    }
+    var slideBack =function() {
+        if(cur ===0) {
+        $("#"+imgL[0]).hide()
+            cur=2;
+        }
+        $("#"+imgL[cur-1]).fadeIn()
+        $("#"+imgL[cur]).hide()
+        if(cur !==0) {
+            cur--;
+        }else {
+            cur=0;
+        }
+    }
+    $('#next').on("click",slideShow)
+     $('#prev').on("click",slideBack)
+    console.log("H")
+    var first1 =imgL[0]
+    console.log(imgL[0])
+    $(index).hide();
+    //$("#"+imgL[0]).slideDown();
+    imgL[0].show
+    </script>
+
+    </body>
+</html>
